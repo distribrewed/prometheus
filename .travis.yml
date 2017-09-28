@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+language: bash
+
+branches:
+  only:
+    - master
+
+jobs:
+  include:
+    - stage: Build image
+      env: ARCH=x64
+      script:
+      - ./build.sh

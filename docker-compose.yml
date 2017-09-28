@@ -1,0 +1,12 @@
+version: "2"
+services:
+  prometheus:
+    image: distribrewed/prometheus:x64
+    links:
+      - consul
+  consul:
+    image: consul
+    environment:
+      CONSUL_LOCAL_CONFIG: '{"datacenter": "distribrewed"}'
+    ports:
+      - "8500:8500"
