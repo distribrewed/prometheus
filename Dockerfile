@@ -15,7 +15,8 @@ RUN set -e && \
     rm -rf /tmp
 
 ENV TEMPLATE_FILE=/etc/prometheus/prometheus-template.yml \
-    CONFIG_FILE=/etc/prometheus/prometheus.yml
+    CONFIG_FILE=/etc/prometheus/prometheus.yml \
+    CONSUL_SERVER=localhost:8500
 
 COPY prometheus-template.yml ${TEMPLATE_FILE}
 
