@@ -25,4 +25,4 @@ COPY prometheus-template.yml ${TEMPLATE_FILE}
 
 COPY ./entry-point.sh /entry-point.sh
 ENTRYPOINT ["/entry-point.sh"]
-CMD ["-config.file=/etc/prometheus/prometheus.yml"]
+CMD ["--config.file=/etc/prometheus/prometheus.yml"]
