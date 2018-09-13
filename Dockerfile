@@ -3,8 +3,6 @@ FROM prom/prometheus
 ENV CONSUL_TEMPLATE_BIN /etc/prometheus/consul-template
 ENV CONSUL_TEMPLATE_VERSION 0.19.3
 
-EXPOSE 9090
-
 # Install consul template
 RUN set -e && \
     mkdir -p /tmp/consul && \
