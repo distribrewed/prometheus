@@ -13,8 +13,9 @@ RUN set -e && \
     wget https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
     sha256sum -c consul-template_${CONSUL_TEMPLATE_VERSION}_SHA256SUMS 2>&1 | grep OK && \
     unzip consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip && \
-    mv consul-template /prometheus/consul-template && \
-    rm -rf /tmp
+    mv consul-template /prometheus/consul-template
+    #&& \
+    #rm -rf /tmp
 
 ENV TEMPLATE_FILE=/etc/prometheus/prometheus-template.yml \
     CONFIG_FILE=/etc/prometheus/prometheus.yml \
